@@ -4,7 +4,7 @@ public class DateFormatException extends RuntimeException {
 
     private String date;
 
-    public DateFormatException(String date){
+    public DateFormatException(String date) {
         this.date = date;
     }
 

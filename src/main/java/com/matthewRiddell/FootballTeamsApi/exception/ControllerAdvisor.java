@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 public class ControllerAdvisor extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(DateFormatException.class)
-    public ResponseEntity<Object> handleDateFormatException(DateFormatException dateFormatException, WebRequest webRequest){
+    public ResponseEntity<Object> handleDateFormatException(DateFormatException dateFormatException, WebRequest webRequest) {
         Map<String, Object> body = new LinkedHashMap<>();
         body.put("status", HttpStatus.UNPROCESSABLE_ENTITY);
         body.put("timestamp", LocalDateTime.now());
@@ -28,7 +28,7 @@ public class ControllerAdvisor extends ResponseEntityExceptionHandler {
     }
 
     @ExceptionHandler(FootballTeamAlreadyExistsException.class)
-    public ResponseEntity<Object> handleFootballTeamAlreadyExistsException(FootballTeamAlreadyExistsException footballTeamAlreadyExistsException, WebRequest webRequest){
+    public ResponseEntity<Object> handleFootballTeamAlreadyExistsException(FootballTeamAlreadyExistsException footballTeamAlreadyExistsException, WebRequest webRequest) {
         Map<String, Object> body = new LinkedHashMap<>();
         body.put("status", HttpStatus.CONFLICT);
         body.put("timestamp", LocalDateTime.now());
@@ -38,7 +38,7 @@ public class ControllerAdvisor extends ResponseEntityExceptionHandler {
     }
 
     @ExceptionHandler(FootballTeamNotFoundException.class)
-    public ResponseEntity<Object> handleFootballTeamNotFoundException(FootballTeamNotFoundException footballTeamNotFoundException, WebRequest webRequest){
+    public ResponseEntity<Object> handleFootballTeamNotFoundException(FootballTeamNotFoundException footballTeamNotFoundException, WebRequest webRequest) {
         Map<String, Object> body = new LinkedHashMap<>();
         body.put("status", HttpStatus.NOT_FOUND);
         body.put("timestamp", LocalDateTime.now());
@@ -48,7 +48,7 @@ public class ControllerAdvisor extends ResponseEntityExceptionHandler {
     }
 
     @ExceptionHandler(InvalidFootballTeamException.class)
-    public ResponseEntity<Object> handleInvalidFootballTeamException(InvalidFootballTeamException invalidFootballTeamException , WebRequest webRequest){
+    public ResponseEntity<Object> handleInvalidFootballTeamException(InvalidFootballTeamException invalidFootballTeamException, WebRequest webRequest) {
         Map<String, Object> body = new LinkedHashMap<>();
         body.put("status", HttpStatus.UNPROCESSABLE_ENTITY);
         body.put("timestamp", LocalDateTime.now());

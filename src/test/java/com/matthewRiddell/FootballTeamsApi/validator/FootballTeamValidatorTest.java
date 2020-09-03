@@ -15,7 +15,7 @@ class FootballTeamValidatorTest {
     private ApiValidator apiValidator;
 
     @Test
-    void footballTeamWithLessThanSevenPlayersThrowsInvalidFootballTeamException(){
+    public void footballTeamWithLessThanSevenPlayersThrowsInvalidFootballTeamException(){
         //googled it and apparently you have to have a minimum of seven players to be regarded as a team
 
         //Given
@@ -32,7 +32,7 @@ class FootballTeamValidatorTest {
     }
 
     @Test
-    void footballTeamWithEmptyValuesShouldHaveErrors(){
+    public void footballTeamWithEmptyValuesShouldHaveErrors(){
 
         //Given
         FootballTeam newcastleUnited = FootballTeam.builder().name("").city("")
